@@ -1,0 +1,223 @@
+/************** Navigation Bar — Glass **************/
+
+/* Design of the navigation bar */
+.navbar {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  padding: var(--nav-pad-y) var(--nav-pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  /* sizing */
+  --nav-pad-y: 0.4rem;
+  --nav-pad-x: 5%;
+
+  /* glass controls (tweak to taste) */
+  --glass-r: 125;
+  --glass-g: 125;
+  --glass-b: 125;
+  --glass-a: 0.01;
+  --glass-blur: 7px;
+  --glass-sat: 140%;
+
+  /* glass background */
+  background: rgba(
+    var(--glass-r),
+    var(--glass-g),
+    var(--glass-b),
+    var(--glass-a)
+  );
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  transition: 0.5s ease-out;
+}
+
+/* Navbar after the webpage is scrolled */
+.navbar.sticky {
+  background: rgba(var(--glass-r), var(--glass-g), var(--glass-b), 0.22);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Logo (image) ---------- */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: rgb(
+    var(--gray-100)
+  ); /* keeps compatibility if you ever add text again */
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* remove the old underline bar meant for text logos */
+.logo::after {
+  content: none;
+}
+
+.logo_img {
+  width: 55px;
+  height: 55px;
+  display: block;
+  object-fit: contain;
+  border-radius: 10px; /* feel free to set to 0 if your icon is square */
+  transition: transform 0.25s ease, filter 0.25s ease;
+  image-rendering: auto;
+}
+
+.logo:hover .logo_img,
+.logo:focus .logo_img {
+  transform: translateY(-1px) scale(1.04);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+}
+
+.navbar.sticky .logo_img {
+  filter: brightness(1.05);
+}
+
+/* keep these for backward compatibility (no effect now) */
+.logo span {
+  color: rgb(var(--blue-400));
+  font-weight: 600;
+  transition: 0.5s ease;
+}
+
+/* flex container for links on the left */
+.navlinks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Individual links list in navlink container */
+.navlinks ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+/* Individual link in links list */
+.navlinks ul li a {
+  text-decoration: none;
+  color: rgb(var(--gray-300));
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 400;
+  font-size: var(--font-size-s);
+  line-height: 1;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* Hover and active */
+.navlinks ul li a:hover,
+.navlinks ul li a:focus,
+.navlinks ul li a.active {
+  color: rgb(var(--gray-100));
+}
+
+/* Underline animation for links */
+.navlinks ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: rgb(var(--gray-100));
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.4s ease-out;
+}
+
+.navlinks ul li a:hover::after,
+.navlinks ul li a:focus::after,
+.navlinks ul li a.active::after {
+  width: 100%;
+}
+
+/* Theme toggle button */
+#theme {
+  color: rgb(var(--gray-300));
+  font-size: var(--font-size-xl);
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: rgb(var(--gray-800));
+  cursor: pointer;
+  transition: 0.5s ease-in;
+}
+
+#theme:hover {
+  color: rgb(var(--gray-100));
+  background: rgb(var(--gray-600));
+}
+
+/* Menu icon for responsiveness */
+#menu-bar {
+  position: relative;
+  cursor: pointer;
+  display: none;
+  color: rgb(var(--gray-100));
+  font-size: var(--font-size-3xl);
+}
+
+/************** Responsiveness **************/
+@media (max-width: 900px) {
+  .navbar {
+    padding: 1.2rem 5%;
+  }
+
+  #menu-bar {
+    display: block;
+  }
+
+  .navlinks {
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    padding: 2rem 4%;
+    z-index: 1;
+    transition: 0.4s ease-out;
+    flex-direction: column;
+    background: rgba(var(--gray-700), 0.8);
+  }
+
+  .navlinks ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .navlinks.active {
+    left: 0;
+  }
+  .navlinks a {
+    display: block;
+    margin: 1rem 0;
+  }
+
+  /* slightly smaller logo on mobile */
+  .logo_img {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 1.2rem 7%;
+  }
+  /* keep logo readable on very small screens */
+  .logo_img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+}

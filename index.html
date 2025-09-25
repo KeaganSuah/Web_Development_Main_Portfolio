@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta Data for the Main page, such as description and author -->
+    <meta name="author" content="Keagan Suah" />
+    
+    <!-- SEO -->
+    <title>Keagan Suah</title>
+    <meta name="description" content="Hello, I'm Keagan Suah, a final-year Computer Science student and Software Engineer intern passionate about building scalable, reliable systems that turn raw data into actionable insights for better decision-making." />
+    <link rel="canonical" href="https://your-domain.example/" />
+
+    <!-- Open Graph (Google + LinkedIn/WhatsApp previews) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Keagan Suah" />
+    <meta property="og:description" content="Hello, I'm Keagan Suah, a final-year Computer Science student and Software Engineer intern passionate about building scalable, reliable systems that turn raw data into actionable insights for better decision-making." />
+    <meta property="og:url" content="https://your-domain.example/" />
+    <meta property="og:image" content="https://your-domain.example/global/icon.png" />
+
+    <!-- Favicon / Touch Icon -->
+    <link rel="icon" sizes="512x512" href="/static/global/icon.png" />
+    <link rel="apple-touch-icon" href="/static/global/icon.png" />
+
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [{
+        "@type": "Person",
+        "name": "Keagan Suah",
+        "jobTitle": "Software Engineer Intern",
+        "description": "Hello, I'm Keagan Suah, a final-year Computer Science student and Software Engineer intern passionate about building scalable, reliable systems that turn raw data into actionable insights for better decision-making.",
+        "url": "https://your-domain.example/",
+        "image": "https://your-domain.example/static/about/hero/myFace.png",
+        "sameAs": [
+          "https://github.com/KeaganSuah",
+          "https://www.linkedin.com/in/keagan-suah/"
+        ]
+      },{
+        "@type": "WebSite",
+        "name": "Keagan Suah",
+        "url": "https://your-domain.example/"
+      }]
+    }
+    </script>
+
+    <!-- Box Icons Import -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/styles/global/global.css" />
+    <link rel="stylesheet" href="/styles/global/footer.css" />
+    <link rel="stylesheet" href="/styles/global/hero.css" />
+    <link rel="stylesheet" href="/styles/global/scrollAnimation.css" />
+    <link rel="stylesheet" href="/styles/global/navbar.css" />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/styles/home/summary.css" />
+    <link rel="stylesheet" href="/styles/home/hero.css" />
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="/styles/about/journey.css" />
+    <link rel="stylesheet" href="/styles/about/skills.css" />
+
+    <!-- Page Style -->
+    <link rel="stylesheet" href="/styles/portfolio/portfolio.css" />
+    <link rel="stylesheet" href="/styles/portfolio/hero.css" />
+    <link rel="stylesheet" href="/styles/portfolio/popup.css" />
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="/styles/contact/hero.css" />
+  </head>
+  <body>
+    <!-- Loading animation -->
+    <h1 class="counter">0</h1>
+    <section class="overlay">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="car"></div>
+      <div class="car"></div>
+      <div class="car"></div>
+      <div class="car"></div>
+      <div class="car"></div>
+    </section>
+    <!-- Header and Navigation -->
+    <header class="navbar moveDown">
+  <!-- Logo (image) -->
+  <a href="/" class="logo active" aria-label="Go to homepage">
+      <img
+        src="/static/global/icon.png"
+        alt="Keagan Suah logo"
+        class="logo_img"
+        width="70"
+        height="70"
+        decoding="async"
+        fetchpriority="high"
+      />
+    </a>
+
+    <!-- Menu icon for small screens -->
+    <div class="bx bx-menu" id="menu-bar"></div>
+
+    <!-- Navigation Links -->
+    <nav class="navlinks">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><i class="bx bxs-bulb" id="theme"></i></li>
+      </ul>
+    </nav>
+  </header>
+
+    <!-- End Header & Nav -->
+
+    <!-- Start of Main contents -->
+    <main>
+      <!-- start of hero section that features the parallax scrolling effect to attract user -->
+      <section class="parallax">
+  <!-- Layers (fixed) -->
+  <figure id="stars">
+    <img
+      id="starOrCloud"
+      src="/static/home/hero/stars.png"
+      alt="starry sky or cloud layer (theme dependent)"
+    />
+  </figure>
+
+  <figure id="moon">
+    <img
+      id="moonOrSun"
+      src="/static/home/hero/moon.png"
+      alt="moon or sun (theme dependent)"
+    />
+  </figure>
+
+  <!-- PLANE REMOVED -->
+
+  <figure id="astronaut">
+    <img src="/static/home/hero/astronaut.png" alt="astronaut illustration" />
+  </figure>
+
+  <!-- top section of hero section to say hello world -->
+  <div class="hero_content_section">
+    <div class="typing_container-header">
+      <span class="multiple-text-header fade"></span>
+    </div>
+    <ul>
+      <li class="fadeDown">H</li>
+      <li class="fadeDown">e</li>
+      <li class="fadeDown">l</li>
+      <li class="fadeDown">l</li>
+      <li class="fadeDown">o</li>
+      <li class="fadeDown">,</li>
+      <li class="fadeDown">W</li>
+      <li class="fadeDown">o</li>
+      <li class="fadeDown">r</li>
+      <li class="fadeDown">l</li>
+      <li class="fadeDown">d</li>
+    </ul>
+  </div>
+
+  <!-- middle section of hero section to introduce myself, keagan suah -->
+  <div class="hero_content_section">
+    <h2 class="moveUp">My Name is</h2>
+    <h3 class="moveUp">Keagan Suah</h3>
+  </div>
+
+  <!-- bottom section of hero section to show my position and what i am -->
+  <div class="hero_content_section">
+    <h2 class="moveUp">And I am a</h2>
+    <div class="typing_container moveup">
+      <span class="multiple-text"></span>
+    </div>
+  </div>
+</section>
+
+      <!-- End of hero section -->
+
+
+      <!-- Start of Hero section for about page -->
+      <article class="hero" id="about">
+        <div class="hero_container">
+          <!-- Short description about me, Keagan Suah in the hero section -->
+          <div class="description fadeLeft">
+            <h1>about</h1>
+            <h2>
+              Aspiring Data Engineer from Sunny Singapore
+            </h2>
+            <p>
+              My internship experience sparked my interest in data engineering, where I aim to build pipelines that automate data transfer and help organisations turn raw data into meaningful insights. This direction combines my interest in problem-solving, system design, and data-driven thinking.
+            </p>
+          </div>
+          <!-- Image of Keagan Suah in hero section -->
+          <figure class="fadeRight">
+            <img
+              src="/static/about/hero/myFace.PNG"
+              alt="picture of Keagan Suah taken professionally without background"
+            />
+          </figure>
+        </div>
+      </article>
+      <!-- End hero section -->
+
+      <!-- My journey, both education and experiences -->
+      <article id="journey">
+        <div class="section_header fadeUp">
+          <p class="section_kicker">Education &amp; Experience Development</p>
+          <h2 class="section_title">My Journey</h2>
+        </div>
+
+        <section class="journey_container">
+          <ul>
+            <!-- Accenture — Software Engineer Intern -->
+            <li class="journey_card fade">
+              <h3>Accenture PLC</h3>
+              <h4>Software Engineer Intern</h4>
+
+              <p>
+                • Spearheaded an ETL data validation pipeline microservice in
+                <strong>AWS ECS</strong>,
+                <strong>reducing runtime by 90%</strong> by extracting Excel
+                files from <strong>S3</strong>, validating 27,000 rows of data
+                with <strong>Pandas/Polars</strong> using custom rule logic, and
+                loading error logs into <strong>DynamoDB</strong>.
+              </p>
+
+              <p>
+                • Architected a <strong>DynamoDB</strong> schema (partition/sort
+                keys, GSIs, batch processing),
+                <strong>cutting query latency by 80%</strong> and enabling fast
+                metadata queries, frontend querying, and error/warning upload.
+              </p>
+
+              <p>
+                • <strong>Reduced data retrieval latency by 40%</strong> by
+                integrating <strong>S3</strong> and
+                <strong>DynamoDB</strong> APIs via the
+                <strong>AWS SDK Boto3</strong> in <strong>Python</strong> into
+                the backend microservice, enabling real-time file access and
+                validation results for <strong>React</strong>-based user
+                interfaces.
+              </p>
+
+              <figure class="company_logo">
+                <img
+                  src="/static/about/journey/accenture.png"
+                  alt="Accenture logo"
+                />
+              </figure>
+              <span class="date">Jul. 2025 – Present</span>
+            </li>
+
+            <!-- Accenture — Cloud Engineer Intern -->
+            <li class="journey_card fade">
+              <h3>Accenture PLC</h3>
+              <h4>Cloud Engineer Intern</h4>
+
+              <p>
+                • Delivered 60,000+ CSV records daily by automating
+                <strong>Jira/JSM</strong> reporting via
+                <strong>GitLab CI/CD</strong> with <strong>REST API</strong> and
+                <strong>Bash</strong>,
+                <strong>cutting processing time by 60%</strong> and eliminating
+                manual steps.
+              </p>
+
+              <p>
+                • Enhanced system performance testing
+                <strong>runtime by 80%</strong> by engineering a serverless
+                automation pipeline using an
+                <strong>AWS Lambda</strong> (<strong>Python</strong>) and
+                <strong>GitLab</strong> to extract <strong>130+</strong>
+                <strong>CloudWatch</strong> metrics for analysis.
+              </p>
+
+              <p>
+                • Enhanced <strong>Terraform</strong> Infrastructure as Code to
+                provision <strong>EC2</strong> and <strong>RDS</strong> across 3
+                environments, <strong>reducing setup time by 40%</strong> and
+                improving observability by embedding
+                <strong>CloudWatch Agent</strong> in user data for advanced
+                metrics.
+              </p>
+
+              <p>
+                • <strong>Achieved 95% VM compliance</strong> by developing
+                <strong>PowerShell/Bash</strong> version-checking and upgrade
+                scripts on <strong>AWS SSM</strong> across 3 environments to
+                standardise VM software with zero manual effort
+              </p>
+
+              <p>
+                • <strong>Improved deployment stability</strong> in
+                <strong>Kubernetes</strong> by <strong>70%</strong> by
+                orchestrating blue-green rollouts, pod scaling, and log
+                monitoring.
+              </p>
+
+              <figure class="company_logo">
+                <img
+                  src="/static/about/journey/accenture.png"
+                  alt="Accenture logo"
+                />
+              </figure>
+              <span class="date">Feb. 2025 – Present</span>
+            </li>
+
+            <!-- Apple — Specialist -->
+            <li class="journey_card fade">
+              <h3>Apple Inc.</h3>
+              <h4>Specialist</h4>
+              <p>
+                • <strong>Scored 95/100 customer satisfaction</strong> by
+                resolving technical issues for 500+ customers via streamlined
+                Apple workflows.
+              </p>
+              <p>
+                • <strong>Earned an internal award</strong> for onboarding 50+
+                business clients and catalysing a collaborative, positive team
+                culture.
+              </p>
+              <p>
+                • <strong>Reduced onboarding time by 40%</strong> for 200+
+                customers by delivering personalised setup experiences.
+              </p>
+              <figure class="company_logo">
+                <img src="/static/about/journey/apple.png" alt="Apple logo" />
+              </figure>
+              <span class="date">Aug 2024 – Feb 2025</span>
+            </li>
+
+            <!-- University of London — BSc Computer Science (above NS) -->
+            <li class="journey_card fade">
+              <h3>University of London</h3>
+              <h4>Bachelor of Science in Computer Science</h4>
+              <p>
+                • <strong>Relevant coursework:</strong>: Web Development,
+                Fundamentals of Computer Science, Object-Oriented Programming,
+                Software Development & Design,Database Network & the Web, Data
+                Structures & Algorithms, Data Science, Advance Database, Machine
+                Learning
+              </p>
+              <figure class="company_logo">
+                <img
+                  src="/static/about/journey/University_of_London.png"
+                  alt="University of London logo"
+                />
+              </figure>
+              <span class="date">Oct 2023 – Oct 2026</span>
+            </li>
+
+            <!-- SAF — Innovation Developer (NS) -->
+            <li class="journey_card fade">
+              <h3>Singapore Armed Forces</h3>
+              <h4>Innovation Developer — National Service</h4>
+              <p>
+                • <strong>Accelerated duty-roster generation by 80%</strong> by
+                building a back-end automation tool with
+                <strong>Python</strong>, <strong>Flask</strong> &amp;
+                <strong>SQLite</strong>, replacing legacy Excel planning.
+              </p>
+              <p>
+                • <strong>Improved battalion efficiency by 20%</strong> by
+                launching a centralised attendance system on
+                <strong>AWS Lightsail</strong> with
+                <strong>Route 53</strong> DNS and a custom
+                <strong>HTML/CSS</strong> front-end.
+              </p>
+              <p>
+                • Led and
+                <strong>delivered unit innovation initiatives</strong> as a
+                Corporal First Class focused on servicemen experience.
+              </p>
+              <figure class="company_logo">
+                <img
+                  src="/static/about/journey/singapore_army.png"
+                  alt="Singapore Armed Forces logo"
+                />
+              </figure>
+              <span class="date">Jun 2021 – Apr 2023</span>
+            </li>
+
+            <!-- Audit Intern -->
+            <li class="journey_card fade">
+              <h3>V.P. Kumaran &amp; Co</h3>
+              <h4>Audit Intern</h4>
+              <p>
+                • Verified financial data integrity across diverse client
+                accounts using </trong>advanced analysis—identified</strong> discrepancies with
+                <strong>98% accuracy</strong>, informing risk mitigation.
+              </p>
+              <p>
+                • <strong>Streamlined audit workflows by 40%</strong> through
+                advanced Excel handling of large financial statements for
+                quicker reconciliation and reporting.
+              </p>
+              <figure class="company_logo">
+                <img
+                  src="/static/about/journey/vpk.png"
+                  alt="Audit firm logo"
+                />
+              </figure>
+              <span class="date">Sep 2020 – Jan 2021</span>
+            </li>
+
+            <!-- Temasek Polytechnic — Diploma -->
+            <li class="journey_card fade">
+              <h3>Temasek Polytechnic</h3>
+              <h4>Diploma in Accountancy &amp; Finance</h4>
+              <p>
+                • <strong>Relevant coursework:</strong>: Statistics for
+                Business; Business Technology & Analytics; Applied Analytics;
+                Accounting Information Systems, AI & Automation; Fintech & Risk
+                Governance; Corporate Accounting & Reporting; Audit & Assurance;
+                Sustainability Reporting.
+              </p>
+              <figure class="company_logo">
+                <img
+                  src="/static/about/journey/tp.jpeg"
+                  alt="Temasek Polytechnic logo"
+                />
+              </figure>
+              <span class="date">Apr 2019 – Mar 2021</span>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- End of my Journey section -->
+
+      <!-- My Skills -->
+      <article id="skills">
+        <div class="section_header fadeUp">
+          <p class="section_kicker">What I Build With</p>
+          <h2 class="section_title">My Skills</h2>
+        </div>
+        <section class="skills_section fade">
+          <!-- Languages -->
+          <div class="skills_group">
+            <h3 class="skills_heading">Languages</h3>
+            <ul class="skills_grid">
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/bash_w.png" alt="Bash icon" />
+                  <figcaption>Bash</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/c++.png" alt="C++ icon" />
+                  <figcaption>C++</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/html.png" alt="HTML icon" />
+                  <figcaption>HTML</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/css.png" alt="CSS icon" />
+                  <figcaption>CSS</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/javascript.png"
+                    alt="JavaScript icon"
+                  />
+                  <figcaption>JavaScript</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/python.png"
+                    alt="Python icon"
+                  />
+                  <figcaption>Python</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/sql.png" alt="SQL icon" />
+                  <figcaption>SQL</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/powershell.png"
+                    alt="PowerShell icon"
+                  />
+                  <figcaption>PowerShell</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Frameworks / Libraries -->
+          <div class="skills_group">
+            <h3 class="skills_heading">Frameworks / Libraries</h3>
+            <ul class="skills_grid">
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/django_w.png"
+                    alt="Django icon"
+                  />
+                  <figcaption>Django</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/ejs.png" alt="EJS icon" />
+                  <figcaption>EJS</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/flask_w.png" alt="Flask icon" />
+                  <figcaption>Flask</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/mysql.png" alt="mysql icon" />
+                  <figcaption>MySQL</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/matplotlib.png"
+                    alt="Matplotlib icon"
+                  />
+                  <figcaption>Matplotlib</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/nodejs.png"
+                    alt="Node.js icon"
+                  />
+                  <figcaption>Node.js</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/numpy.png" alt="NumPy icon" />
+                  <figcaption>NumPy</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/pandas.png"
+                    alt="Pandas icon"
+                  />
+                  <figcaption>Pandas</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/polars.png"
+                    alt="Polars icon"
+                  />
+                  <figcaption>Polars</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Cloud / DevOps -->
+          <div class="skills_group">
+            <h3 class="skills_heading">Cloud / DevOps</h3>
+            <ul class="skills_grid">
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/github-w.png"
+                    alt="GitHub icon"
+                  />
+                  <figcaption>GitHub</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/git.png" alt="Git icon" />
+                  <figcaption>Git</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/aws-w.png" alt="AWS icon" />
+                  <figcaption>AWS</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/docker.png"
+                    alt="Docker icon"
+                  />
+                  <figcaption>Docker</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/kubernets.png"
+                    alt="Kubernetes icon"
+                  />
+                  <figcaption>Kubernetes</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/terraform.png"
+                    alt="Terraform icon"
+                  />
+                  <figcaption>Terraform</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/gitlab.png"
+                    alt="GitLab icon"
+                  />
+                  <figcaption>GitLab</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tools -->
+          <div class="skills_group">
+            <h3 class="skills_heading">Tools</h3>
+            <ul class="skills_grid">
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/jira.png" alt="JIRA icon" />
+                  <figcaption>JIRA</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/jupyter.png"
+                    alt="Jupyter Notebook icon"
+                  />
+                  <figcaption>Jupyter</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img src="/static/about/skills/linux.png" alt="Linux icon" />
+                  <figcaption>Linux</figcaption>
+                </figure>
+              </li>
+              <li class="skill_card">
+                <figure>
+                  <img
+                    src="/static/about/skills/vscode.png"
+                    alt="VS Code icon"
+                  />
+                  <figcaption>VS Code</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </article>
+
+      <!-- Start of portfolio section cards container, showing all featured projects I have done -->
+      <article id="portfolio">
+        <div class="section_header fadeUp">
+          <p class="section_kicker">Things I’ve Been Building</p>
+          <h2 class="section_title">My Projects</h2>
+        </div>
+        <section class="portfolio_container">
+          <!-- portfolio card for Portfolio website version 1 -->
+          <div class="portfolio_card moveUp">
+            <figure>
+              <img
+                src="/static/portfolio/portfolio/portfolio_v1.png"
+                alt="picture showing my first version of portfolio website project"
+              />
+            </figure>
+            <div class="portfolio_card_details">
+              <h3 class="card_title">Portfolio Website V1</h3>
+              <div class="hover_container">
+                <span> Web Development </span>
+                <span> Show Project </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- portfolio card for E commerce hackathon (NO 'large' class) -->
+          <div class="portfolio_card moveUp">
+            <figure>
+              <img
+                src="/static/portfolio/portfolio/e_commerce.png"
+                alt="picture showing E commerce hackathon project"
+              />
+            </figure>
+            <div class="portfolio_card_details">
+              <h3 class="card_title">E-Commerce Hackathon23</h3>
+              <div class="hover_container">
+                <span> Web Development </span>
+                <span> Show Project </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- portfolio card for NS roll call system -->
+          <div class="portfolio_card moveUp">
+            <figure>
+              <img
+                src="/static/portfolio/portfolio/roll_call.png"
+                alt="picture showing NS roll call system project"
+              />
+            </figure>
+            <div class="portfolio_card_details">
+              <h3 class="card_title">NS Roll Call System</h3>
+              <div class="hover_container">
+                <span> Automation </span>
+                <span> Show Project </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- portfolio card for NS duty planner system (NO 'large' class) -->
+          <div class="portfolio_card moveUp">
+            <figure>
+              <img
+                src="/static/portfolio/portfolio/duty_planner.png"
+                alt="picture showing NS duty planner system project"
+              />
+            </figure>
+            <div class="portfolio_card_details">
+              <h3 class="card_title">NS Duty Planner System</h3>
+              <div class="hover_container">
+                <span>Automation </span>
+                <span> Show Project </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- portfolio card for DSTA Hackathon -->
+          <div class="portfolio_card moveUp">
+            <figure>
+              <img
+                src="/static/portfolio/portfolio/dsta_hackathon24.png"
+                alt="picture showing DSTA hackathon"
+              />
+            </figure>
+            <div class="portfolio_card_details">
+              <h3 class="card_title">DSTA Hackathon24</h3>
+              <div class="hover_container">
+                <span> Artificial Intelligence </span>
+                <span> Show Project </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- portfolio card for 2d platform game -->
+          <div class="portfolio_card moveUp">
+            <figure>
+              <img
+                src="/static/portfolio/portfolio/platform_game.png"
+                alt="picture showing my 2d platform game project"
+              />
+            </figure>
+            <div class="portfolio_card_details">
+              <h3 class="card_title">2D Platform Game</h3>
+              <div class="hover_container">
+                <span> Game </span>
+                <span> Show Project </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- portfolio card for data science hackathon -->
+          <div class="portfolio_card moveUp">
+            <figure>
+              <img
+                src="/static/portfolio/portfolio/poetry.png"
+                alt="picture showing Poetry Assistant"
+              />
+            </figure>
+            <div class="portfolio_card_details">
+              <h3 class="card_title">Poetry Assistant</h3>
+              <div class="hover_container">
+                <span> Algorithm </span>
+                <span> Show Project </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- portfolio card for Themepark website -->
+          <div class="portfolio_card moveUp">
+            <figure>
+              <img
+                src="/static/portfolio/portfolio/themepark.png"
+                alt="picture showing Themepark Website"
+              />
+            </figure>
+            <div class="portfolio_card_details">
+              <h3 class="card_title">Themepark Website</h3>
+              <div class="hover_container">
+                <span> Web Development </span>
+                <span> Show Project </span>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </article>
+      <!-- End of portfolio section cards container -->
+
+      <!-- Start of portfolio popup when portfolio card is clicked -->
+      <aside class="modal" id="modal">
+        <header class="modal_header">
+          <button class="close_button" type="button" aria-label="Close modal">
+            <i class="bx bx-x"></i>
+          </button>
+        </header>
+        <section class="modal_body">
+          <h2 class="title">Usable Query</h2>
+          <figure>
+            <img />
+          </figure>
+          <div class="segment">
+            <h3>About</h3>
+            <p class="description"></p>
+          </div>
+          <div class="segment">
+            <h3>Technology</h3>
+            <ul class="technology"></ul>
+          </div>
+        </section>
+      </aside>
+      <!-- Overlay of pop up to block out the external section of pop up so that user focus on pop up -->
+      <aside id="overlay"></aside>
+      <!-- End of portfolio popup when portfolio card is clicked -->
+
+      <article id="contact">
+        <div class="section_header fadeUp">
+          <p class="section_kicker">Start a Conversation with Me!</p>
+          <h2 class="section_title">My Socials</h2>
+        </div>
+        <!-- Two-column layout: cards (left) + form (right) -->
+        <section class="contact_layout">
+          <!-- LEFT: contact cards + socials -->
+          <div class="contact_left">
+            <!-- Ways to contact (stacked) -->
+            <section class="ways_contact_container">
+              <!-- Removed: My Portfolio card -->
+
+              <!-- Resume -->
+              <a
+                href="/static/contact/Resume.pdf"
+                class="ways_contact_card fadeUp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bx bxs-file-blank"></i>
+                <div class="wc_text">
+                  <h3>My Resume</h3>
+                  <p>Click to View</p>
+                </div>
+              </a>
+
+              <!-- Email -->
+              <a
+                href="mailto:suahkeagan@gmail.com"
+                class="ways_contact_card fadeUp"
+              >
+                <i class="bx bxs-envelope"></i>
+                <div class="wc_text">
+                  <h3>My Email</h3>
+                  <p>suahkeagan@gmail.com</p>
+                </div>
+              </a>
+            </section>
+
+            <!-- Socials (vertical list like the reference) -->
+            <ul class="contact_socials">
+              <li>
+                <a
+                  href="https://github.com/KeaganSuah"
+                  class="social_row"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="social_icon github"
+                    ><i class="bx bxl-github"></i
+                  ></span>
+                  <span class="social_label">Github</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/keagan-suah/"
+                  class="social_row"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="social_icon linkedin"
+                    ><i class="bx bxl-linkedin"></i
+                  ></span>
+                  <span class="social_label">Linkedin</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- RIGHT: form (stacked vertically, outline-only, no shadow) -->
+          <form id="form" action="/contact.html" class="contact_form fadeRight">
+            <div class="input-control">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Full Name"
+              />
+              <div class="error"></div>
+            </div>
+
+            <div class="input-control">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+              />
+              <div class="error"></div>
+            </div>
+
+            <div class="input-control">
+              <textarea
+                id="message"
+                name="message"
+                rows="7"
+                placeholder="Your Message"
+              ></textarea>
+              <div class="error"></div>
+            </div>
+
+            <button type="submit" class="send_btn">Send message</button>
+          </form>
+        </section>
+      </article>
+    </main>
+    <!-- End of main contents -->
+
+    <!-- Start Footer, the footer consist of the logo, other hyperlinks to different parts of the website, social media icons hyperlinks, and terms and condition -->
+    <footer>
+  <section class="footer-container">
+    <!-- Name / Brand -->
+    <div class="footer-title-wrap">
+      <h2 class="footer-title">KEAGAN SUAH</h2>
+    </div>
+
+    <!-- Centered navigation -->
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#journey">Experience</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Social + copyright (centered) -->
+    <div class="footer-social">
+      <ul class="social-media-links">
+        <li>
+          <a
+            href="https://sg.linkedin.com/in/keagan-suah"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/keagan_suah/?igsh=aXdhbWhtOG81djkz"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/profile.php?id=100005976436275&mibextid=LQQJ4d"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="bx bxl-facebook"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/KeaganSuah"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="bx bxl-github"></i
+          ></a>
+        </li>
+      </ul>
+
+      <p class="copyright">Copyright © Keagan Suah. All rights reserved.</p>
+    </div>
+  </section>
+</footer>
+
+    <!-- End Footer -->
+
+    <!-- Javascripts Scripts -->
+    <script src="/scripts/global/navbar.js"></script>
+    <script src="/scripts/global/glow.js"></script>
+    <script src="/scripts/global/changeMode.js"></script>
+    <script src="/scripts/global/scrollAnimation.js"></script>
+
+    <!-- JavaScript Frameworks, typing script  -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- GSAP and ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <!-- Page Scripts -->
+    <script src="/scripts/home/summary.js"></script>
+    <script src="/scripts/home/hero.js"></script>
+
+    <!-- Page Scripts -->
+    <script src="/scripts/about/service.js"></script>
+    <script src="/scripts/about/skills.js"></script>
+    <script src="/scripts/about/journey.js"></script>
+
+    <!-- Page Scripts -->
+    <script src="/scripts/portfolio/portfolio.js"></script>
+
+    <!-- Preset Theme -->
+    <script src="/scripts/global/presetTheme.js"></script>
+
+    <!-- Page Scripts -->
+    <script src="/scripts/contact/form.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "AeMcoRzZ6hSsobQ6n",
+        });
+      })();
+    </script>
+  </body>
+</html>

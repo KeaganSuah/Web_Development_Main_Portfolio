@@ -1,0 +1,111 @@
+/* fade in animation */
+.fade {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 0.75s;
+}
+
+/* fade in animation from bottom to top*/
+.fadeUp {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(25%);
+  transition: all 0.5s;
+}
+
+/* fade in animation from top to bottom*/
+.fadeDown {
+  transform: translateY(-100%);
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 0.8s;
+}
+
+/* move in animation from bottom to top*/
+.moveUp {
+  transform: translateY(25%);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+/* fade in animation from left to right*/
+.fadeLeft {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-50%);
+  transition: all 0.75s;
+}
+
+/* fade in animation from right to left*/
+.fadeRight {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(50%);
+  transition: all 0.75s;
+}
+
+/* move in animation from top to bottom*/
+.moveDown {
+  transform: translateY(-100%);
+  transition: all 1s;
+}
+
+/* Delay transitions classes */
+.delay_1 {
+  transition-delay: 400ms;
+}
+
+.delay_2 {
+  transition-delay: 600ms;
+}
+
+.delay_3 {
+  transition-delay: 800ms;
+}
+
+/* for users that prefer not to have animation, it will have no transitions */
+@media (prefers-reduced-motion) {
+  .fade {
+    transition: none;
+  }
+
+  .fadeUp {
+    transition: none;
+  }
+}
+
+/* Used to show the element, for all, even fade in, slide in etc */
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(0);
+}
+
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+}
+
+.bar,
+.car {
+  width: 50vw;
+  height: 100vh;
+  background: rgb(var(--gray-800));
+}
+
+.counter {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 10000;
+  color: antiquewhite;
+  padding: 0 0.2em 0 4em;
+  font-size: 20vw;
+  font-family: "Times New Roman", Times, serif;
+}

@@ -1,0 +1,341 @@
+/* ===========================
+   Journey / Experience
+   =========================== */
+
+/* container for the journey section, holding the cards and the line */
+.journey_container {
+  /* helpers used to align the logo with the rail/date */
+  --rail-gap: 2rem; /* distance from card edge to the center rail on desktop */
+  --badge: 46px; /* logo circle size (matches .company_logo width/height) */
+  --date-offset: 46px; /* how far above the card the date chip sits (your value) */
+  --date-min-h: 36px; /* visual height of the date chip for vertical centering */
+
+  width: 75vw;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem 0 0;
+
+  /* NEW: extend the rail & fine-tune horizontal centering */
+  --rail-extend: -20px; /* how far the line extends past the content */
+  --rail-fine: 1px; /* tiny left nudge to perfectly center the logo */
+
+  --rail-lift: 20px; /* try 60–120px */
+}
+
+/* vertical timeline line */
+.journey_container::after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--gray-100)),
+    rgb(var(--gray-700))
+  );
+
+  /* rail centered on desktop */
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Move the line up by --rail-lift, and shorten the bottom by the same amount */
+  top: calc(-1 * var(--rail-extend) - var(--rail-lift));
+  height: calc(100% + (var(--rail-extend) * 2) - var(--rail-lift));
+}
+
+/* list reset */
+.journey_container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* card */
+.journey_card {
+  width: 50%;
+  height: auto;
+  padding: 1.25rem 1.35rem;
+  box-shadow: 0 0 3px 1.2px rgb(var(--gray-700));
+  background: rgb(var(--gray-100), 0.02);
+  border-radius: 0.6rem;
+  z-index: 1;
+  position: relative;
+  transition: 0.25s ease-out;
+  margin-bottom: clamp(
+    4rem,
+    5vw,
+    5.5rem
+  ); /* NEW: vertical space between cards */
+}
+
+/* glowing cursor-follow layer */
+.journey_card::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgb(var(--gray-100), 0.1),
+    transparent 40%
+  );
+  border-radius: inherit;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: var(--before_opacity, 0);
+  transition: opacity 500ms;
+}
+
+/* alternate left/right on desktop */
+.journey_card:nth-child(odd) {
+  float: left;
+  clear: right;
+  transform: translateX(-2rem);
+}
+.journey_card:nth-child(even) {
+  float: right;
+  clear: left;
+  transform: translateX(2rem);
+}
+
+/* headings (role + company) */
+.journey_card h3,
+.journey_card h4 {
+  text-align: center;
+  margin: 0;
+  color: rgb(var(--gray-100));
+  font-weight: 600;
+}
+.journey_card h3 {
+  font-size: var(--font-size-xl);
+}
+.journey_card h4 {
+  margin-top: 0.2rem;
+  font-size: var(--font-size-l);
+  color: rgb(var(--gray-200));
+}
+
+/* bullet paragraphs */
+.journey_card p {
+  margin: 0.6rem 0;
+  font-weight: 300;
+  font-size: var(--font-size-m);
+  color: rgb(var(--gray-300));
+  line-height: 1.65;
+}
+
+/* make bold parts pop similarly to headings */
+.journey_card p strong {
+  font-weight: 600;
+  color: rgb(var(--gray-100));
+}
+
+/* read-more patterns (kept) */
+.read_more {
+  display: block;
+  opacity: 0;
+  height: 0;
+  transition: all 0.5s;
+}
+.read_more_more {
+  margin: 0.8rem 0;
+  display: block;
+  opacity: 1;
+  height: 3.5rem;
+}
+
+/* read-more status */
+.status {
+  color: rgb(var(--gray-400));
+  font-size: var(--font-size-s);
+  font-weight: 300;
+  transition: 0.5s ease;
+}
+.journey_card:hover .status {
+  color: rgb(var(--gray-200));
+  font-size: var(--font-size-m);
+  font-weight: 400;
+}
+
+/* ======= Date pill (UNIFIED) ======= */
+.journey_container .journey_card > .date {
+  position: absolute;
+  top: -46px;
+
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+
+  padding: 0.5rem 1rem; /* comfy, consistent */
+  border-radius: 9999px; /* full pill */
+  border: 2px solid rgba(var(--gray-300), 0.6);
+  background: transparent;
+  color: rgb(var(--gray-200));
+  font-size: clamp(0.8rem, 0.35vw + 0.78rem, 0.95rem);
+  font-weight: 500;
+  line-height: 1;
+
+  min-width: max-content;
+  height: auto;
+  box-shadow: none;
+  transition: border-color 0.3s ease;
+}
+.journey_card:nth-child(odd) > .date {
+  right: 20px;
+}
+.journey_card:nth-child(even) > .date {
+  left: 20px;
+}
+
+@media (hover: hover) {
+  .journey_container .journey_card > .date {
+    border-color: rgba(var(--gray-300), 0.6);
+  }
+  .journey_card:hover > .date {
+    border-color: rgba(var(--gray-100), 1);
+  }
+}
+
+/* ======= Company logo badge (center of the rail & aligned to date) ======= */
+.journey_card .company_logo {
+  width: var(--badge);
+  height: var(--badge);
+  padding: 6px;
+  background: #fff;
+  border-radius: 50%;
+  border: 2px solid rgba(var(--gray-300), 0.5);
+  overflow: hidden;
+
+  position: absolute;
+
+  /* vertical: center it to the date chip */
+  top: calc(-1 * var(--date-offset) + (var(--date-min-h) / 2));
+  transform: translateY(-50%);
+  z-index: 3;
+}
+.company_logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Desktop: place the logo so its CENTER lands exactly on the rail.
+   The rail sits var(--rail-gap) away from each card edge due to the ±2rem shift. */
+.journey_card:nth-child(odd) .company_logo {
+  right: calc(-1 * var(--rail-gap) - (var(--badge) / 2) + var(--rail-fine));
+}
+.journey_card:nth-child(even) .company_logo {
+  left: calc(-1 * var(--rail-gap) - (var(--badge) / 2) - var(--rail-fine));
+}
+
+/* =========================================================
+   <= 800px: Left-rail layout (line + icons on the LEFT)
+   (UNCHANGED as requested)
+   ========================================================= */
+@media (max-width: 800px) {
+  .journey_container {
+    width: 80vw;
+    transform: translateX(15px);
+  }
+  .journey_container::after {
+    left: -31px;
+    transform: none;
+  }
+
+  .journey_card {
+    width: 100%;
+    float: none;
+    clear: none;
+    margin-bottom: 80px;
+  }
+  .journey_card:nth-child(odd) {
+    transform: translateX(0);
+    text-align: left;
+  }
+  .journey_card:nth-child(odd) > .date {
+    left: 20px;
+    right: auto;
+  }
+  .journey_card:nth-child(odd) .company_logo {
+    left: -30px;
+    transform: translate(-50%, -50%);
+  }
+  .journey_card:nth-child(even) {
+    transform: translateX(0);
+  }
+
+  /* ↓ Font scaling */
+  .journey_card h3 {
+    font-size: clamp(1.1rem, 1rem + 1vw, 1.35rem);
+  }
+  .journey_card h4 {
+    font-size: clamp(1rem, 0.9rem + 0.6vw, 1.2rem);
+  }
+  .journey_card p {
+    font-size: clamp(0.92rem, 0.85rem + 0.3vw, 0.98rem);
+    line-height: 1.6;
+  }
+  .journey_container .journey_card > .date {
+    font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.9rem);
+    padding: 0.45rem 0.9rem;
+  }
+  .journey_card .status {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================================
+   <= 500px: reduce a bit more for small phones (UNCHANGED)
+   ========================================================= */
+@media (max-width: 500px) {
+  .journey_container {
+    width: 70vw;
+    transform: translateX(15px);
+  }
+  .read_more_more {
+    height: 6rem;
+  }
+
+  .journey_card h3 {
+    font-size: clamp(1rem, 0.9rem + 1.2vw, 1.2rem);
+  }
+  .journey_card h4 {
+    font-size: clamp(0.95rem, 0.85rem + 0.8vw, 1.1rem);
+  }
+  .journey_card p {
+    font-size: clamp(0.86rem, 0.8rem + 0.4vw, 0.94rem);
+    line-height: 1.55;
+  }
+  .journey_container .journey_card > .date {
+    font-size: clamp(0.74rem, 0.68rem + 0.4vw, 0.86rem);
+    padding: 0.4rem 0.85rem;
+  }
+  .journey_card .status {
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================================================
+   <= 400px: final nudge (UNCHANGED)
+   ========================================================= */
+@media (max-width: 400px) {
+  .read_more_more {
+    height: 9rem;
+  }
+  .journey_card h3 {
+    font-size: 1.05rem;
+  }
+  .journey_card h4 {
+    font-size: 0.95rem;
+  }
+  .journey_card p {
+    font-size: 0.84rem;
+  }
+  .journey_container .journey_card > .date {
+    font-size: 0.8rem;
+  }
+}

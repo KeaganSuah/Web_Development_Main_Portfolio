@@ -1,0 +1,105 @@
+/* styling for the hero section */
+.hero {
+  height: 90vh;
+  padding: 5rem 7% 0;
+}
+
+/* styling for the hero container */
+.hero_container {
+  height: 100%;
+  background: rgb(var(--gray-900));
+  border-bottom: 2px solid rgb(var(--gray-400));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Styling for the description section in the hero */
+.hero_container .description {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1rem;
+}
+
+/* styling description main header */
+.hero_container .description h1 {
+  color: rgb(var(--gray-300));
+  font-size: var(--font-size-8xl);
+  letter-spacing: -0.4rem;
+}
+
+/* styling description sub header */
+.hero_container .description h2 {
+  font-weight: 300;
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-3xl);
+  color: rgb(var(--gray-500));
+  margin-bottom: 1rem;
+}
+
+/* styling description section of small description, if the page has it */
+.hero_container .description p {
+  width: 90%;
+  color: rgb(var(--gray-300));
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-2xl);
+  font-weight: 300;
+}
+
+/* styling image on the right of the hero section */
+.hero_container figure {
+  width: 50%;
+  height: 100%;
+  max-height: 750px;
+}
+
+/* properties for the imgage tag to cover the entire figure tag */
+.hero_container figure img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Media for tablet */
+@media (max-width: 1024px) {
+  /* adjust the container by pushing the image below the description */
+  .hero_container {
+    flex-direction: column;
+    gap: 0;
+    padding-top: 15%;
+  }
+
+  /* let the description and image to take the full width */
+  .hero_container .description,
+  .hero_container figure {
+    width: 100%;
+  }
+
+  /* let the hero section height auto reset based on media height */
+  .hero {
+    height: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero_container .description h1 {
+    font-size: var(--font-size-6xl);
+  }
+
+  /* styling description sub header */
+  .hero_container .description h2 {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+  }
+
+  /* styling description section of small description, if the page has it */
+  .hero_container .description p {
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-m);
+  }
+}

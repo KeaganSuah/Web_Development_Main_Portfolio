@@ -1,0 +1,248 @@
+/* Prevent any horizontal push on tiny screens */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Overall container for hero section */
+.parallax {
+  overflow: hidden;
+  background: transparent;
+  height: 300vh;
+}
+
+/* container for the images container in the hero section */
+.parallax figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* style for image in the image container */
+.parallax figure img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ===== Moon (fixed, 20% across the screen; 30% width) ===== */
+#moon {
+  position: fixed;
+  top: 15%;
+  left: 20vw; /* center of the moon sits at 20% of screen */
+  transform: translateX(-45%);
+  width: 35vw; /* exactly 30% width as requested */
+  height: auto;
+  z-index: -1;
+}
+
+/* ===== Astronaut (fixed, ~80% across the screen) ===== */
+#astronaut {
+  position: fixed;
+  top: 20vh;
+  left: 80vw; /* center of the astronaut sits at 80% of screen */
+  transform: translateX(-40%); /* keeps it centered on that 80% line */
+  width: 15vw; /* keep your previous scale; adjust if you want */
+  height: auto;
+  z-index: -1;
+}
+
+#astronaut img {
+  width: 100%;
+  height: auto;
+}
+
+/* Stars background: fixed, full-bleed */
+#stars {
+  background: linear-gradient(
+      180deg,
+      rgb(var(--gray-1000)),
+      rgb(var(--blue-900))
+    ),
+    url("path/to/your/background-image.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: fixed;
+  z-index: -2;
+  width: 100vw;
+  height: 100vh;
+}
+
+#stars img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* style for each section in the hero container */
+.hero_content_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* style for the main title in the hero section */
+.hero_content_section h2 {
+  color: rgb(var(--gray-200));
+  font-size: var(--font-size-7xl);
+  z-index: 2;
+  font-weight: 700;
+}
+
+/* style for the sub title in the hero section */
+.hero_content_section h3 {
+  background: linear-gradient(
+    180deg,
+    rgb(var(--blue-700)),
+    rgb(var(--gray-100))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: var(--font-size-8xl);
+  z-index: 2;
+  font-weight: 500;
+  letter-spacing: -8px;
+}
+
+/* style for the typing animation text container */
+.typing_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.typing_container-header span {
+  background: linear-gradient(
+    180deg,
+    rgb(var(--blue-700)),
+    rgb(var(--gray-100))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: var(--font-size-4xl);
+  z-index: 2;
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+
+/* style for the typing animation text */
+.typing_container span {
+  background: linear-gradient(
+    180deg,
+    rgb(var(--blue-700)),
+    rgb(var(--gray-100))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: var(--font-size-8xl);
+  z-index: 2;
+  font-weight: 500;
+  letter-spacing: -8px;
+  font-family: var(--font-mono);
+}
+
+/* style for the opening text container */
+.hero_content_section ul {
+  display: flex;
+  flex-direction: row;
+}
+
+/* style for each letter in the opening text */
+.hero_content_section ul li {
+  list-style: none;
+  color: rgb(var(--gray-200));
+  font-size: var(--font-size-8xl);
+  font-weight: 700;
+  z-index: 2;
+  margin: -3px;
+  transition-delay: 400ms;
+}
+
+/* animation delay for each letter in the opening text */
+.hero_content_section ul li:nth-child(2) {
+  transition-delay: 450ms;
+}
+.hero_content_section ul li:nth-child(3) {
+  transition-delay: 500ms;
+}
+.hero_content_section ul li:nth-child(4) {
+  transition-delay: 550ms;
+}
+.hero_content_section ul li:nth-child(5) {
+  transition-delay: 600ms;
+}
+.hero_content_section ul li:nth-child(6) {
+  margin-right: 4px;
+  transition-delay: 650ms;
+}
+.hero_content_section ul li:nth-child(7) {
+  transition-delay: 700ms;
+}
+.hero_content_section ul li:nth-child(8) {
+  transition-delay: 750ms;
+}
+.hero_content_section ul li:nth-child(9) {
+  transition-delay: 800ms;
+}
+.hero_content_section ul li:nth-child(10) {
+  transition-delay: 850ms;
+}
+.hero_content_section ul li:nth-child(11) {
+  transition-delay: 900ms;
+}
+
+/* media query for tablets */
+@media (max-width: 1024px) {
+  .hero_content_section h2 {
+    font-size: var(--font-size-6xl);
+  }
+  .hero_content_section h3 {
+    font-size: var(--font-size-7xl);
+  }
+  .hero_content_section ul li {
+    font-size: var(--font-size-7xl);
+  }
+  .typing_container span {
+    font-size: var(--font-size-6xl);
+  }
+}
+
+/* mid screens */
+@media (max-width: 800px) {
+  /* clamp already handles width, but keep your preference bump */
+  #moon {
+    width: 60%;
+  } /* <-- remove this so the moon stays 30vw */
+  #astronaut {
+    width: 40vw;
+  } /* optional: keep or tune as you like */
+}
+
+/* media query for phone devices */
+@media (max-width: 550px) {
+  .hero_content_section h2 {
+    font-size: var(--font-size-5xl);
+  }
+  .hero_content_section h3 {
+    font-size: var(--font-size-5xl);
+    letter-spacing: -4px;
+  }
+  .hero_content_section ul li {
+    font-size: var(--font-size-6xl);
+    margin: -2px;
+  }
+  .typing_container span {
+    font-size: var(--font-size-4xl);
+    letter-spacing: -4px;
+  }
+}

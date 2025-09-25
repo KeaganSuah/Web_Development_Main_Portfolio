@@ -1,0 +1,135 @@
+/************** Footer Section **************/
+
+/* Overall footer padding and top divider */
+footer {
+  padding: 5rem 7% 2rem;
+  background: rgb(var(--gray-900));
+}
+
+.footer-container {
+  border-top: 2px solid rgb(var(--gray-400));
+  padding: 4rem 3% 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center everything horizontally */
+  gap: 2.25rem;
+  text-align: center; /* center text by default */
+}
+
+/* ===== Title / Name ===== */
+.footer-title-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-title {
+  margin: 0;
+  color: rgb(var(--gray-100));
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  /* nice responsive size without breaking layout */
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+}
+
+/* ===== Centered Navigation ===== */
+.footer-nav ul {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 3.5rem);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  font-weight: 400;
+  color: rgb(var(--gray-500));
+  font-size: clamp(var(--font-size-m), 1.6vw, var(--font-size-xl));
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+  color: rgb(var(--gray-100));
+  outline: none;
+}
+
+/* ===== Social + Copyright (Centered) ===== */
+.footer-social {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Social media links re-use your existing styling */
+.social-media-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.social-media-links a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: 0.15rem solid rgb(var(--gray-200));
+  border-radius: 50%;
+  color: rgb(var(--gray-200));
+  font-size: var(--font-size-3xl);
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.3s ease-in;
+}
+
+.social-media-links a:hover,
+.social-media-links a:focus {
+  color: rgb(var(--gray-900));
+  background: rgb(var(--gray-200));
+  outline: none;
+}
+
+/* Copyright */
+.copyright {
+  margin: 0.25rem 0 0;
+  color: rgb(var(--gray-200));
+  font-size: var(--font-size-xs);
+  font-weight: 400;
+}
+
+/************** Responsiveness **************/
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .footer-container {
+    gap: 2rem;
+  }
+}
+
+/* Big phones and below: stack links into a column */
+@media (max-width: 600px) {
+  .footer-nav ul {
+    flex-direction: column; /* 👈 column on phones */
+    gap: 0.85rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+  .social-media-links a {
+    width: 46px;
+    height: 46px;
+    font-size: var(--font-size-2xl);
+  }
+}

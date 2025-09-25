@@ -1,0 +1,270 @@
+/* ===== Overlay ===== */
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(var(--gray-700), 0.6);
+  pointer-events: none;
+  transition: 0.5s ease-in-out;
+}
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ===== Modal ===== */
+.modal {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 1rem 1rem 0 0;
+  z-index: 10;
+  background: rgb(var(--gray-900));
+  width: 50vw;
+  transition: 0.5s ease-in-out;
+  max-height: 80vh;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE 10+ / old Edge */
+  scrollbar-width: none;
+}
+
+.modal::-webkit-scrollbar {
+  /* Chrome/Safari/Edge (Chromium) */
+  width: 0;
+  height: 0;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ===== Modal Header ===== */
+.modal_header {
+  padding: 1rem 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(var(--gray-400));
+}
+.modal_header .close_button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border: 0.15rem solid rgb(var(--gray-200));
+  background: transparent;
+  border-radius: 50%;
+  color: rgb(var(--gray-200));
+  padding: 0;
+  line-height: 1;
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.25s ease-in;
+}
+.modal_header .close_button i {
+  font-size: 1.25rem;
+  line-height: 1;
+  pointer-events: none;
+}
+.modal_header .close_button:hover,
+.modal_header .close_button:focus {
+  outline: none;
+}
+
+/* ===== Modal Body ===== */
+.modal_body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 3% 4rem;
+}
+.modal_body .title {
+  color: rgb(var(--gray-200));
+  font-size: var(--font-size-3xl);
+  font-weight: 500;
+}
+.modal_body figure {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  margin-bottom: 1rem;
+}
+.modal_body figure img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+.modal_body h3 {
+  color: rgb(var(--gray-200));
+  font-size: var(--font-size-2xl);
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+.modal_body h4 {
+  color: rgb(var(--gray-200));
+  font-size: var(--font-size-2xl);
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+}
+.modal_body h4 i {
+  margin-right: 0.3em;
+  color: rgb(var(--gray-200));
+  font-size: var(--font-size-3xl);
+  font-weight: 100;
+}
+.segment {
+  margin-bottom: 1rem;
+}
+.modal_body .description {
+  color: rgb(var(--gray-300));
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  font-weight: 300;
+}
+
+/* Default link style inside modal (for inline links, not the Links chips) */
+.modal_body a {
+  text-decoration: none;
+  color: rgb(var(--blue-500));
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  transition: 0.5s ease-in-out;
+}
+.modal_body a:hover,
+.modal_body a:focus {
+  color: rgb(var(--gray-400));
+}
+
+/* ===== Pill Lists: Technology, Skills, Links (layout) ===== */
+ul.skills,
+ul.technology,
+ul.links {
+  margin-top: 0.7rem;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Technology & Skills pills (baseline chips) */
+ul.skills li,
+ul.technology li {
+  box-shadow: 0px 0px 2px 1.2px rgb(var(--gray-700));
+  background: linear-gradient(
+    331deg,
+    rgb(var(--gray-700), 0.7),
+    rgb(var(--gray-900))
+  );
+  color: rgb(var(--gray-100));
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: var(--font-size-s);
+  font-weight: 300;
+  display: inline-block;
+}
+
+/* ===== Enhanced Links pills (distinct look & interactions) ===== */
+ul.links li {
+  list-style: none;
+}
+
+/* Base: filled accent look, larger font & icon */
+.modal_body ul.links li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  padding: 10px 18px;
+  border-radius: 10px;
+
+  font-size: var(--font-size-l); /* larger than tech/skills */
+  font-weight: 400;
+  line-height: 1;
+
+  color: rgb(var(--gray-100));
+  background: linear-gradient(
+    331deg,
+    rgb(var(--blue-600), 0.18),
+    rgb(var(--blue-500), 0.12)
+  );
+  border: 1px solid rgb(var(--blue-500), 0.35);
+  box-shadow: 0 0 0 1px rgb(var(--blue-500), 0.15),
+    0 1px 8px rgb(var(--blue-900), 0.35);
+
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease, transform 120ms ease;
+}
+
+/* Bigger icon (scales with text) */
+.modal_body ul.links li a i {
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+/* Hover/focus: outline-only variant to differentiate behavior */
+.modal_body ul.links li a:hover,
+.modal_body ul.links li a:focus-visible {
+  background: transparent;
+  color: rgb(var(--blue-400));
+  border-color: rgb(var(--blue-400));
+  box-shadow: 0 0 0 2px rgb(var(--blue-500), 0.25),
+    0 2px 12px rgb(var(--blue-900), 0.35);
+  transform: translateY(-1px);
+}
+.modal_body ul.links li a:hover i,
+.modal_body ul.links li a:focus-visible i {
+  color: inherit;
+}
+
+/* Active (mouse down) */
+.modal_body ul.links li a:active {
+  transform: translateY(0);
+  box-shadow: 0 0 0 2px rgb(var(--blue-500), 0.22),
+    0 1px 6px rgb(var(--blue-900), 0.3);
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .modal_body ul.links li a {
+    transition: none;
+  }
+}
+
+/* ===== Scroll lock when modal is open ===== */
+.disable-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .modal {
+    width: 80vw;
+  }
+  .modal_body figure {
+    height: 40vh;
+  }
+}
+@media (max-width: 524px) {
+  .modal {
+    width: 100vw;
+  }
+  .modal_body figure {
+    height: 35vh;
+  }
+}
