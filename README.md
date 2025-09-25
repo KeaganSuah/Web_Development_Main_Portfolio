@@ -3,7 +3,7 @@
 Welcome to my portfolio website, where I showcase my journey as a computer science student, passionate developer, and innovative problem solver. This site is a culmination of my experiences and skills, built to inspire and connect with others in the tech community.
 
 ## Website Link
-[Visit My Portfolio](https://keagansuah.github.io/)
+[Visit My Portfolio](https://www.keagansuah.com)
 
 ## Introduction
 My portfolio website represents both my personal and professional growth as a second-year computer science student. It serves as a platform to highlight my projects, insights, and expertise in areas such as front-end development, data visualisation, cloud computing, and machine learning.
